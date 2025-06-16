@@ -3,7 +3,6 @@ const board = Chessboard('board', {
   position: 'start',
   onDrop: handleMove
 });
-
 const game = new Chess();
 
 function updateMoveList() {
@@ -19,22 +18,17 @@ function updateMoveList() {
 }
 
 function handleMove(source, target) {
-  const move = game.move({
-    from: source,
-    to: target,
-    promotion: 'q'
-  });
-
-  if (move === null) return 'snapback';
+  const move = game.move({from: source, to: target, promotion: 'q'});
+  if (!move) return 'snapback';
   updateMoveList();
   setTimeout(botMove, 500);
 }
 
 function botMove() {
-  const moves = game.moves();
-  if (game.game_over() || moves.length === 0) return;
-  const move = moves[Math.floor(Math.random() * moves.length)];
-  game.move(move);
+  const possible = game.moves();
+  if (game.game_over() || possible.length === 0) return;
+  const randomMove = possible[Math.floor(Math.random() * possible.length)];
+  game.move(randomMove);
   board.position(game.fen());
   updateMoveList();
 }
