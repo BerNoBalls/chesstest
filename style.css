@@ -5,17 +5,14 @@ body {
 }
 
 .header {
-  background-color: #002841;
+  background: #00704A; /* màu Starbucks bạn thích */
   color: white;
-  height: 33vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
 .content {
-  background-color: #f5f5f5;
+  background: white;
   min-height: 60vh;
   display: flex;
   justify-content: center;
@@ -24,16 +21,11 @@ body {
 
 .chess-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 20px;
   padding: 20px;
-  flex-wrap: wrap;
 }
 
-#board {
-  width: 400px;
-}
+#board { width: 400px; }
 
 #moves {
   background: #e0e0e0;
@@ -44,14 +36,11 @@ body {
   font-family: monospace;
   border-radius: 8px;
 }
-
-#moves p {
-  margin: 5px 0;
-}
+#moves p { margin: 5px 0; }
 
 .footer {
   text-align: center;
-  background-color: #002841;
+  background: #002841;
   color: white;
   padding: 10px;
 }
